@@ -7,9 +7,10 @@
 //
 
 import UIKit
-
+import Eureka
 class ViewController: UIViewController {
     
+   
     @IBOutlet weak var darkBlueBG: UIImageView!
     @IBOutlet weak var myWardrobeButton: UIButton!
     @IBOutlet weak var addItemsButton: UIButton!
@@ -18,9 +19,11 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("sfda")
+        print("It works")
         // Do any additional setup after loading the view, typically from a nib.
+        
     }
-    
 }
+
+
 
