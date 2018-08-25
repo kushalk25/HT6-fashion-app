@@ -9,17 +9,22 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    @IBOutlet weak var darkBlueBG: UIImageView!
+    @IBOutlet weak var myWardrobeButton: UIButton!
+    @IBOutlet weak var addItemsButton: UIButton!
+    @IBOutlet weak var giveMeIdeasButton: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("sfda")
         // Do any additional setup after loading the view, typically from a nib.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    @IBAction func myWardrobePressed(_ sender: Any) {
+        print("clicked")
     }
-
-
+    
 }
 
