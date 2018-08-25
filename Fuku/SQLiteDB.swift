@@ -16,13 +16,25 @@ class SQLiteDB {
     
     // Clothing Table
     private let clothingTable = Table("clothing")
-    private let clothingId = Expression<Int>("id")
+    private let clothingId = Expression<Int64>("id")
     private let clothingName = Expression<String>("name")
-    private let clothingType = Expression<String>("type")
     private let clothingColour = Expression<String>("colour")
+    
+    // Type Table
+    private let typeTable = Table("type")
+    private let typeId = Expression<Int64>("id")
+    private let typeName = Expression<String>("name")
+    private let typeParentId = Expression<Int64?>("parent_id")
+    
+    // Clothing_Type Table
+    private let clothing_typeTable = Table("clothing_type")
+    private let CT_clothingId = Expression<Int64>("clothing_id")
+    private let CT_typeId = Expression<Int64>("type_id")
     
     // flags
     private let deleteClothingTable = false
+    private let deleteTypeTable = false
+    private let deleteClothing_TypeTable = false
     
 
     private init(){
@@ -36,6 +48,8 @@ class SQLiteDB {
             db = try Connection("\(path)/db.sqlite3")
             print("db found")
             createClothingTable()
+            createTypeTable()
+            createClothing_TypeTable()
         } catch {
             db = nil
             print("unable to find db")
@@ -43,7 +57,7 @@ class SQLiteDB {
             
     }
     
-    
+    // Clothing Table functions
     private func createClothingTable() {
     
         do {
@@ -54,7 +68,6 @@ class SQLiteDB {
             try db!.run(clothingTable.create(ifNotExists: true) { table in
                 table.column(clothingId, primaryKey: true)
                 table.column(clothingName)
-                table.column(clothingType)
                 table.column(clothingColour)
             })
             
@@ -66,24 +79,108 @@ class SQLiteDB {
     func getClothing() {
         do {
             for clothing in try db!.prepare(clothingTable) {
-                print("id: \(clothing[clothingId]), name: \(clothing[clothingName]), colour: \(clothing[clothingColour]), type: \(clothing[clothingType]) ")
+                print("id: \(clothing[clothingId]), name: \(clothing[clothingName]), colour: \(clothing[clothingColour]) ")
             }
         } catch {
             print("failed to get cloting")
         }
     }
     
-    func addClothing(name: String, colour: String, type: String) {
+    func addClothing(name: String, colour: String, typeIds: [Int64]) {
         
         do {
-            let insert = clothingTable.insert(clothingName <- name, clothingColour <- colour, clothingType <- type)
-            let rowid = try db!.run(insert)
-            // get rid of rowid if i don't need it
+            let insertClothing = clothingTable.insert(clothingName <- name, clothingColour <- colour)
+            let clothingId = try db!.run(insertClothing)
+            for typeId in typeIds {
+                let insertClothing_Type = clothing_typeTable.insert(
+                    CT_clothingId <- clothingId,
+                    CT_typeId <- typeId
+                )
+                try db!.run(insertClothing_Type)
+    
+            }
         } catch {
             print("cannot add clothing: \(name)")
+            print("error \(error)")
         }
     }
 
+    // Type Table functions
+    private func createTypeTable() {
+        
+        do {
+            if (deleteTypeTable) {
+                try db?.run(typeTable.drop(ifExists: true))
+            }
+            
+            try db!.run(typeTable.create(ifNotExists: true) { table in
+                table.column(typeId, primaryKey: true)
+                table.column(typeName)
+                table.column(typeParentId)
+            })
+            
+            let upperwear_id = try db!.run(typeTable.insert(typeName <- "upperwear", typeParentId <- nil))
+            let lowerwear_id = try db!.run(typeTable.insert(typeName <- "lowerwear", typeParentId <- nil))
+            let footwear_id = try db!.run(typeTable.insert(typeName <- "footwear", typeParentId <- nil))
+            
+            try db!.run(typeTable.insert(typeName <- "jacket", typeParentId <- upperwear_id))
+            let tops_id = try db!.run(typeTable.insert(typeName <- "tops", typeParentId <- upperwear_id))
+            try db!.run(typeTable.insert(typeName <- "t-shirt", typeParentId <- tops_id))
+            try db!.run(typeTable.insert(typeName <- "dress shirt", typeParentId <- tops_id))
+            
+            try db!.run(typeTable.insert(typeName <- "jeans", typeParentId <- lowerwear_id))
+            try db!.run(typeTable.insert(typeName <- "sweat pants", typeParentId <- lowerwear_id))
+            
+            try db!.run(typeTable.insert(typeName <- "sneakers", typeParentId <- footwear_id))
+            try db!.run(typeTable.insert(typeName <- "boots", typeParentId <- footwear_id))
+            
+        } catch {
+            print("could not create clothing table")
+        }
+    }
+    
+    func getTypes() {
+        do {
+            print("printing types")
+            for type in try db!.prepare(typeTable) {
+                print("id: \(type[typeId]), name: \(type[typeName]), parent: \(type[typeParentId]) ")
+            }
+        } catch {
+            print("failed to get types")
+        }
+    }
+    
+    // Clothing Type Relational DB functions
+    
+    private func createClothing_TypeTable() {
+        
+        do {
+            if (deleteClothing_TypeTable) {
+                try db?.run(clothing_typeTable.drop(ifExists: true))
+            }
+            
+            try db!.run(clothing_typeTable.create(ifNotExists: true) { table in
+                table.column(CT_clothingId)
+                table.column(CT_typeId)
+                table.unique(CT_clothingId, CT_typeId)
+            })
+            
+        } catch {
+            print("could not create clothing type relational table")
+        }
+    }
+    
+    func getClothing_Types(){
+        do {
+            for clothing_type in try db!.prepare(clothing_typeTable) {
+                print("type: \(clothing_type[CT_typeId]), clothing: \(clothing_type[CT_clothingId])")
+            }
+        } catch {
+            print("could not show relational table")
+        }
+    }
+    
+    
     func alive() {
         print("I'm alive")
     }
