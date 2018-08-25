@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		15769CDCE04243251CA62C59 /* Pods_FukuUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0885FCFE54BC6503CBA0F4F0 /* Pods_FukuUITests.framework */; };
 		55B66DD82130F4B400054735 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B66DD72130F4B400054735 /* AppDelegate.swift */; };
 		55B66DDA2130F4B400054735 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B66DD92130F4B400054735 /* ViewController.swift */; };
 		55B66DDD2130F4B400054735 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55B66DDB2130F4B400054735 /* Main.storyboard */; };
@@ -14,6 +15,9 @@
 		55B66DE22130F4B600054735 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55B66DE02130F4B600054735 /* LaunchScreen.storyboard */; };
 		55B66DED2130F4B600054735 /* FukuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B66DEC2130F4B600054735 /* FukuTests.swift */; };
 		55B66DF82130F4B600054735 /* FukuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B66DF72130F4B600054735 /* FukuUITests.swift */; };
+		55B66E0621310B8E00054735 /* SQLiteDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B66E0521310B8E00054735 /* SQLiteDB.swift */; };
+		94805DF76540E795815A8496 /* Pods_Fuku.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AED65988849A3140AAD9677 /* Pods_Fuku.framework */; };
+		9AFC7ACDD80367B43D13CEB9 /* Pods_FukuTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26360A2C837F349695DCB477 /* Pods_FukuTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +38,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0885FCFE54BC6503CBA0F4F0 /* Pods_FukuUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FukuUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1735B5840946BFF9B5C248B6 /* Pods-Fuku.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fuku.release.xcconfig"; path = "Pods/Target Support Files/Pods-Fuku/Pods-Fuku.release.xcconfig"; sourceTree = "<group>"; };
+		26360A2C837F349695DCB477 /* Pods_FukuTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FukuTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4BD33D0A6FCF47A7ADF5B165 /* Pods-FukuUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FukuUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FukuUITests/Pods-FukuUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		55B66DD42130F4B400054735 /* Fuku.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fuku.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55B66DD72130F4B400054735 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55B66DD92130F4B400054735 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +55,12 @@
 		55B66DF32130F4B600054735 /* FukuUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FukuUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		55B66DF72130F4B600054735 /* FukuUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FukuUITests.swift; sourceTree = "<group>"; };
 		55B66DF92130F4B600054735 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		55B66E0521310B8E00054735 /* SQLiteDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteDB.swift; sourceTree = "<group>"; };
+		7AED65988849A3140AAD9677 /* Pods_Fuku.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fuku.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		97A06044C79F9C581CAECEE6 /* Pods-FukuTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FukuTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FukuTests/Pods-FukuTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A2E61F5240AF6E1F75D8106B /* Pods-FukuTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FukuTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FukuTests/Pods-FukuTests.release.xcconfig"; sourceTree = "<group>"; };
+		C26F8C92C14E05786DFE077B /* Pods-Fuku.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fuku.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Fuku/Pods-Fuku.debug.xcconfig"; sourceTree = "<group>"; };
+		F2EFA443F004371F3C415E15 /* Pods-FukuUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FukuUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FukuUITests/Pods-FukuUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94805DF76540E795815A8496 /* Pods_Fuku.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AFC7ACDD80367B43D13CEB9 /* Pods_FukuTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +84,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15769CDCE04243251CA62C59 /* Pods_FukuUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1646A0E6BB57B1DE13A3D8F0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7AED65988849A3140AAD9677 /* Pods_Fuku.framework */,
+				26360A2C837F349695DCB477 /* Pods_FukuTests.framework */,
+				0885FCFE54BC6503CBA0F4F0 /* Pods_FukuUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		55B66DCB2130F4B400054735 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +108,8 @@
 				55B66DEB2130F4B600054735 /* FukuTests */,
 				55B66DF62130F4B600054735 /* FukuUITests */,
 				55B66DD52130F4B400054735 /* Products */,
+				66933C8A8EBD1B668C1D9C9D /* Pods */,
+				1646A0E6BB57B1DE13A3D8F0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,6 +132,7 @@
 				55B66DDE2130F4B600054735 /* Assets.xcassets */,
 				55B66DE02130F4B600054735 /* LaunchScreen.storyboard */,
 				55B66DE32130F4B600054735 /* Info.plist */,
+				55B66E0521310B8E00054735 /* SQLiteDB.swift */,
 			);
 			path = Fuku;
 			sourceTree = "<group>";
@@ -125,6 +155,19 @@
 			path = FukuUITests;
 			sourceTree = "<group>";
 		};
+		66933C8A8EBD1B668C1D9C9D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C26F8C92C14E05786DFE077B /* Pods-Fuku.debug.xcconfig */,
+				1735B5840946BFF9B5C248B6 /* Pods-Fuku.release.xcconfig */,
+				97A06044C79F9C581CAECEE6 /* Pods-FukuTests.debug.xcconfig */,
+				A2E61F5240AF6E1F75D8106B /* Pods-FukuTests.release.xcconfig */,
+				4BD33D0A6FCF47A7ADF5B165 /* Pods-FukuUITests.debug.xcconfig */,
+				F2EFA443F004371F3C415E15 /* Pods-FukuUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +175,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 55B66DFC2130F4B600054735 /* Build configuration list for PBXNativeTarget "Fuku" */;
 			buildPhases = (
+				C7198166555C16F488E0F949 /* [CP] Check Pods Manifest.lock */,
 				55B66DD02130F4B400054735 /* Sources */,
 				55B66DD12130F4B400054735 /* Frameworks */,
 				55B66DD22130F4B400054735 /* Resources */,
+				91238F2FFE7747338ABD4BDB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -149,6 +194,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 55B66DFF2130F4B600054735 /* Build configuration list for PBXNativeTarget "FukuTests" */;
 			buildPhases = (
+				37D40B38D9C2570730A62CF5 /* [CP] Check Pods Manifest.lock */,
 				55B66DE42130F4B600054735 /* Sources */,
 				55B66DE52130F4B600054735 /* Frameworks */,
 				55B66DE62130F4B600054735 /* Resources */,
@@ -167,6 +213,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 55B66E022130F4B600054735 /* Build configuration list for PBXNativeTarget "FukuUITests" */;
 			buildPhases = (
+				936B6F4D10F48FF68402A2FD /* [CP] Check Pods Manifest.lock */,
 				55B66DEF2130F4B600054735 /* Sources */,
 				55B66DF02130F4B600054735 /* Frameworks */,
 				55B66DF12130F4B600054735 /* Resources */,
@@ -251,11 +298,87 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		37D40B38D9C2570730A62CF5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FukuTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		91238F2FFE7747338ABD4BDB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Fuku/Pods-Fuku-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SQLite.swift/SQLite.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SQLite.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Fuku/Pods-Fuku-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		936B6F4D10F48FF68402A2FD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FukuUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C7198166555C16F488E0F949 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Fuku-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		55B66DD02130F4B400054735 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55B66E0621310B8E00054735 /* SQLiteDB.swift in Sources */,
 				55B66DDA2130F4B400054735 /* ViewController.swift in Sources */,
 				55B66DD82130F4B400054735 /* AppDelegate.swift in Sources */,
 			);
@@ -428,6 +551,7 @@
 		};
 		55B66DFD2130F4B600054735 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C26F8C92C14E05786DFE077B /* Pods-Fuku.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -446,6 +570,7 @@
 		};
 		55B66DFE2130F4B600054735 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1735B5840946BFF9B5C248B6 /* Pods-Fuku.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -464,6 +589,7 @@
 		};
 		55B66E002130F4B600054735 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 97A06044C79F9C581CAECEE6 /* Pods-FukuTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -485,6 +611,7 @@
 		};
 		55B66E012130F4B600054735 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A2E61F5240AF6E1F75D8106B /* Pods-FukuTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -506,6 +633,7 @@
 		};
 		55B66E032130F4B600054735 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4BD33D0A6FCF47A7ADF5B165 /* Pods-FukuUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -526,6 +654,7 @@
 		};
 		55B66E042130F4B600054735 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F2EFA443F004371F3C415E15 /* Pods-FukuUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

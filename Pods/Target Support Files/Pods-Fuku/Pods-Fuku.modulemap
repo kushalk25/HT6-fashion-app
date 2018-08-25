@@ -1,0 +1,6 @@
+framework module Pods_Fuku {
+  umbrella header "Pods-Fuku-umbrella.h"
+
+  export *
+  module * { export * }
+}
