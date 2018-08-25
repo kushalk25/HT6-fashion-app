@@ -6,6 +6,7 @@ target 'Fuku' do
   use_frameworks!
 
   pod 'SQLite.swift', '~> 0.11.5'
+  pod 'Eureka'
 
   target 'FukuTests' do
     inherit! :search_paths
