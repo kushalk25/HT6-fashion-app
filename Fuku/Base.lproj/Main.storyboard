@@ -36,7 +36,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="My Wardrobe" image="closet-3"/>
                                 <connections>
-                                    <action selector="myWardrobePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="w5S-0f-SXE"/>
+                                    <segue destination="Qn7-bk-Krh" kind="show" id="Ntk-7h-LFD"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ww-4I-gsS">
@@ -60,6 +60,90 @@
                 <exit id="1jE-xJ-AR2" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1076" y="133.5832083958021"/>
+        </scene>
+        <!--Wardrobe View Controller-->
+        <scene sceneID="4f2-7d-Aej">
+            <objects>
+                <viewController id="Qn7-bk-Krh" customClass="WardrobeViewController" customModule="Fuku" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Pmv-44-68u">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LLc-eb-5f9">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="kPe-yq-inT">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Wardrobe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3rU-5z-GCG">
+                                            <rect key="frame" x="139" y="8" width="97" height="28"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </view>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Vwe-Vg-azs">
+                                        <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Vwe-Vg-azs" id="vsx-ov-A0v">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Qn7-bk-Krh" id="Ar9-Pj-ghn"/>
+                                    <outlet property="delegate" destination="Qn7-bk-Krh" id="ipe-OO-j8Z"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="LLc-eb-5f9" firstAttribute="top" secondItem="Pmv-44-68u" secondAttribute="top" id="1vA-Ky-0EY"/>
+                            <constraint firstItem="LLc-eb-5f9" firstAttribute="trailing" secondItem="MnL-Nf-CmZ" secondAttribute="trailing" id="hYb-Oe-U4u"/>
+                            <constraint firstItem="LLc-eb-5f9" firstAttribute="leading" secondItem="MnL-Nf-CmZ" secondAttribute="leading" id="hdC-9e-EqH"/>
+                            <constraint firstItem="LLc-eb-5f9" firstAttribute="bottom" secondItem="MnL-Nf-CmZ" secondAttribute="bottom" id="t74-yf-uEW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="MnL-Nf-CmZ"/>
+                    </view>
+                    <connections>
+                        <segue destination="9h5-Oi-FhE" kind="show" identifier="segueToWardrobeItem" id="bC5-kp-EbD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YUQ-Mx-jaP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1045.5999999999999" y="849.62518740629696"/>
+        </scene>
+        <!--Wardrobe Item View Controller-->
+        <scene sceneID="0Pt-s1-4aB">
+            <objects>
+                <viewController id="9h5-Oi-FhE" customClass="WardrobeItemViewController" customModule="Fuku" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="l37-eL-Uki">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RV3-u9-dzz">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="9h5-Oi-FhE" id="cvG-ZV-O8e"/>
+                                    <outlet property="delegate" destination="9h5-Oi-FhE" id="0xm-Ta-mKr"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="A69-7z-Qcw"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ryx-Wx-UIr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1877.5999999999999" y="863.1184407796103"/>
         </scene>
         <!--Form Controller View Controller-->
         <scene sceneID="Ebl-QK-Nt0">
@@ -123,6 +207,7 @@
         <image name="outfit" width="64" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="MYb-cd-omn"/>
         <segue reference="iRc-UR-T1u"/>
     </inferredMetricsTieBreakers>
 </document>

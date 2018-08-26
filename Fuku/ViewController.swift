@@ -13,7 +13,6 @@ class ViewController: UIViewController {
     
    
     @IBOutlet weak var darkBlueBG: UIImageView!
-    @IBOutlet weak var myWardrobeButton: UIButton!
     @IBOutlet weak var addItemsButton: UIButton!
     @IBOutlet weak var giveMeIdeasButton: UIButton!
     

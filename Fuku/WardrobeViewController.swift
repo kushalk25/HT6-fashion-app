@@ -27,11 +27,13 @@ class WardrobeViewController: UIViewController, UITableViewDelegate, UITableView
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(clothingTypes[indexPath.row])
         selected = clothingTypes[indexPath.row]
+        print("about to perform segue")
         self.performSegue(withIdentifier: "segueToWardrobeItem", sender: self)
     }
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         if segue.identifier == "segueToWardrobeItem" {
             if let destination = segue.destination as? WardrobeItemViewController {
                 
@@ -45,6 +47,8 @@ class WardrobeViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print("view loaded")
         clothingTypes = SQLiteDB.instance.getTypes()
 
         // Do any additional setup after loading the view.
