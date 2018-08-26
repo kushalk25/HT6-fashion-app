@@ -7,6 +7,7 @@ target 'Fuku' do
 
   pod 'SQLite.swift', '~> 0.11.5'
   pod 'Eureka'
+  pod 'ImageRow', '~> 3.0'
 
   target 'FukuTests' do
     inherit! :search_paths

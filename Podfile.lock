@@ -1,22 +1,27 @@
 PODS:
   - Eureka (4.2.0)
+  - ImageRow (3.1.0):
+    - Eureka (~> 4.0)
   - SQLite.swift (0.11.5):
     - SQLite.swift/standard (= 0.11.5)
   - SQLite.swift/standard (0.11.5)
 
 DEPENDENCIES:
   - Eureka
+  - ImageRow (~> 3.0)
   - SQLite.swift (~> 0.11.5)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Eureka
+    - ImageRow
     - SQLite.swift
 
 SPEC CHECKSUMS:
   Eureka: 0748c7bbb2560130e43c7bfa83e99c98854a1f42
+  ImageRow: 1ea483078bfa3d880a7fc76fdfcddfd5f29a9e6b
   SQLite.swift: 6e5356850bb1791459f8c16d6ee9195b28714a2e
 
-PODFILE CHECKSUM: 3855bc2afb607e09bc272cafab22a1acfc9c1a0a
+PODFILE CHECKSUM: a7b6312e4f57dae0d92441287fd41ec8d2fd8ae6
 
 COCOAPODS: 1.5.3

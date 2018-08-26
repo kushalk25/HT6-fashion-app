@@ -18,7 +18,8 @@
 		55B66E0621310B8E00054735 /* SQLiteDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B66E0521310B8E00054735 /* SQLiteDB.swift */; };
 		94805DF76540E795815A8496 /* Pods_Fuku.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AED65988849A3140AAD9677 /* Pods_Fuku.framework */; };
 		9AFC7ACDD80367B43D13CEB9 /* Pods_FukuTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26360A2C837F349695DCB477 /* Pods_FukuTests.framework */; };
-		B40DF6112131D23400491B0A /* FormControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40DF6102131D23400491B0A /* FormControllerViewController.swift */; };
+		ECCDE348213217B70031A97A /* myViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCDE347213217B70031A97A /* myViewController.swift */; };
+		ECCDE34A213231A80031A97A /* FormControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCDE349213231A80031A97A /* FormControllerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,8 +61,9 @@
 		7AED65988849A3140AAD9677 /* Pods_Fuku.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fuku.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		97A06044C79F9C581CAECEE6 /* Pods-FukuTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FukuTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FukuTests/Pods-FukuTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A2E61F5240AF6E1F75D8106B /* Pods-FukuTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FukuTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FukuTests/Pods-FukuTests.release.xcconfig"; sourceTree = "<group>"; };
-		B40DF6102131D23400491B0A /* FormControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormControllerViewController.swift; sourceTree = "<group>"; };
 		C26F8C92C14E05786DFE077B /* Pods-Fuku.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fuku.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Fuku/Pods-Fuku.debug.xcconfig"; sourceTree = "<group>"; };
+		ECCDE347213217B70031A97A /* myViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myViewController.swift; sourceTree = "<group>"; };
+		ECCDE349213231A80031A97A /* FormControllerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormControllerViewController.swift; sourceTree = "<group>"; };
 		F2EFA443F004371F3C415E15 /* Pods-FukuUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FukuUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FukuUITests/Pods-FukuUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -132,10 +134,11 @@
 				55B66DD92130F4B400054735 /* ViewController.swift */,
 				55B66DDB2130F4B400054735 /* Main.storyboard */,
 				55B66DDE2130F4B600054735 /* Assets.xcassets */,
+				ECCDE349213231A80031A97A /* FormControllerViewController.swift */,
 				55B66DE02130F4B600054735 /* LaunchScreen.storyboard */,
+				ECCDE347213217B70031A97A /* myViewController.swift */,
 				55B66DE32130F4B600054735 /* Info.plist */,
 				55B66E0521310B8E00054735 /* SQLiteDB.swift */,
-				B40DF6102131D23400491B0A /* FormControllerViewController.swift */,
 			);
 			path = Fuku;
 			sourceTree = "<group>";
@@ -328,11 +331,13 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Fuku/Pods-Fuku-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Eureka/Eureka.framework",
+				"${BUILT_PRODUCTS_DIR}/ImageRow/ImageRow.framework",
 				"${BUILT_PRODUCTS_DIR}/SQLite.swift/SQLite.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Eureka.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageRow.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SQLite.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -383,7 +388,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B40DF6112131D23400491B0A /* FormControllerViewController.swift in Sources */,
+				ECCDE348213217B70031A97A /* myViewController.swift in Sources */,
+				ECCDE34A213231A80031A97A /* FormControllerViewController.swift in Sources */,
 				55B66E0621310B8E00054735 /* SQLiteDB.swift in Sources */,
 				55B66DDA2130F4B400054735 /* ViewController.swift in Sources */,
 				55B66DD82130F4B400054735 /* AppDelegate.swift in Sources */,
