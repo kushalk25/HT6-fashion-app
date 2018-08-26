@@ -86,6 +86,39 @@ class SQLiteDB {
         }
     }
     
+    func getClothingByType(name: String) -> [String] {
+        var clothingResult: [String] = []
+        
+        do {
+            
+            var type_id: Int64? = nil
+            var clothing_ids: [Int64] = []
+            
+            
+            for typeObj in try db!.prepare(typeTable.filter(typeName == name)) {
+                type_id = typeObj[typeId]
+            }
+            
+            
+            for clothing_type in try db!.prepare(clothing_typeTable.filter(CT_typeId == type_id!)) {
+                clothing_ids.append(clothing_type[CT_clothingId])
+            }
+
+            
+            for clothing_id in clothing_ids {
+            
+                for clothing in try db!.prepare(clothingTable.filter(clothingId == clothing_id)) {
+                    print("id: \(clothing[clothingId]), name: \(clothing[clothingName]), colour: \(clothing[clothingColour]) ")
+                    clothingResult.append(clothing[clothingName])
+                }
+            }
+        } catch {
+            print("failed to get cloting")
+        }
+        
+        return clothingResult
+    }
+    
     func addClothing(name: String, colour: String, typeIds: [Int64]) {
         
         do {
@@ -115,39 +148,58 @@ class SQLiteDB {
             
             try db!.run(typeTable.create(ifNotExists: true) { table in
                 table.column(typeId, primaryKey: true)
-                table.column(typeName)
+                table.column(typeName, unique: true)
                 table.column(typeParentId)
             })
             
-            let upperwear_id = try db!.run(typeTable.insert(typeName <- "upperwear", typeParentId <- nil))
-            let lowerwear_id = try db!.run(typeTable.insert(typeName <- "lowerwear", typeParentId <- nil))
-            let footwear_id = try db!.run(typeTable.insert(typeName <- "footwear", typeParentId <- nil))
-            
-            try db!.run(typeTable.insert(typeName <- "jacket", typeParentId <- upperwear_id))
-            let tops_id = try db!.run(typeTable.insert(typeName <- "tops", typeParentId <- upperwear_id))
-            try db!.run(typeTable.insert(typeName <- "t-shirt", typeParentId <- tops_id))
-            try db!.run(typeTable.insert(typeName <- "dress shirt", typeParentId <- tops_id))
-            
-            try db!.run(typeTable.insert(typeName <- "jeans", typeParentId <- lowerwear_id))
-            try db!.run(typeTable.insert(typeName <- "sweat pants", typeParentId <- lowerwear_id))
-            
-            try db!.run(typeTable.insert(typeName <- "sneakers", typeParentId <- footwear_id))
-            try db!.run(typeTable.insert(typeName <- "boots", typeParentId <- footwear_id))
-            
+            if(deleteTypeTable){
+                let upperwear_id = try db!.run(typeTable.insert(typeName <- "upperwear", typeParentId <- nil))
+                let lowerwear_id = try db!.run(typeTable.insert(typeName <- "lowerwear", typeParentId <- nil))
+                let footwear_id = try db!.run(typeTable.insert(typeName <- "footwear", typeParentId <- nil))
+                
+                try db!.run(typeTable.insert(typeName <- "jacket", typeParentId <- upperwear_id))
+                let tops_id = try db!.run(typeTable.insert(typeName <- "tops", typeParentId <- upperwear_id))
+                try db!.run(typeTable.insert(typeName <- "t-shirt", typeParentId <- tops_id))
+                try db!.run(typeTable.insert(typeName <- "dress shirt", typeParentId <- tops_id))
+                
+                try db!.run(typeTable.insert(typeName <- "jeans", typeParentId <- lowerwear_id))
+                try db!.run(typeTable.insert(typeName <- "sweat pants", typeParentId <- lowerwear_id))
+                
+                try db!.run(typeTable.insert(typeName <- "sneakers", typeParentId <- footwear_id))
+                try db!.run(typeTable.insert(typeName <- "boots", typeParentId <- footwear_id))
+            }
         } catch {
             print("could not create clothing table")
         }
     }
     
-    func getTypes() {
+    func getTypes() -> [String] {
+        var types: [String] = []
         do {
             print("printing types")
             for type in try db!.prepare(typeTable) {
                 print("id: \(type[typeId]), name: \(type[typeName]), parent: \(type[typeParentId]) ")
+                types.append(type[typeName])
             }
         } catch {
             print("failed to get types")
         }
+        print("returning types: \(types)")
+        return types
+    }
+    
+    func getTypeIdByName(name: String) -> Int64? {
+        
+        var resultId: Int64? = nil
+        do {
+            for type in try db!.prepare(typeTable.filter(typeName == name)) {
+                print("id: \(type[typeId]), name: \(type[typeName]), parent: \(type[typeParentId]) ")
+                resultId = type[typeId]
+            }
+        } catch {
+            print("failed to get type id for /(name)")
+        }
+        return resultId
     }
     
     // Clothing Type Relational DB functions
