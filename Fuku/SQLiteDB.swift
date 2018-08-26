@@ -33,7 +33,7 @@ class SQLiteDB {
     
     // flags
     private let deleteClothingTable = false
-    private let deleteTypeTable = false
+    private let deleteTypeTable = true
     private let deleteClothing_TypeTable = false
     
 

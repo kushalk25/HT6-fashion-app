@@ -13,6 +13,11 @@ class FormControllerViewController: FormViewController {
    
     override func viewDidLoad() {
         super.viewDidLoad()
+        form +++ Section("Section1")
+            <<< TextRow(){ row in
+                row.title = "Item Name"
+                row.placeholder = "Enter text here"
+        }
         createLogInForm()
     }
     

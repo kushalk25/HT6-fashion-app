@@ -22,6 +22,7 @@
 		9AFC7ACDD80367B43D13CEB9 /* Pods_FukuTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26360A2C837F349695DCB477 /* Pods_FukuTests.framework */; };
 		ECCDE348213217B70031A97A /* myViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCDE347213217B70031A97A /* myViewController.swift */; };
 		ECCDE34A213231A80031A97A /* FormControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCDE349213231A80031A97A /* FormControllerViewController.swift */; };
+		ECCDE34C213251FC0031A97A /* my_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCDE34B213251FC0031A97A /* my_ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		C26F8C92C14E05786DFE077B /* Pods-Fuku.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fuku.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Fuku/Pods-Fuku.debug.xcconfig"; sourceTree = "<group>"; };
 		ECCDE347213217B70031A97A /* myViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myViewController.swift; sourceTree = "<group>"; };
 		ECCDE349213231A80031A97A /* FormControllerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormControllerViewController.swift; sourceTree = "<group>"; };
+		ECCDE34B213251FC0031A97A /* my_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = my_ViewController.swift; sourceTree = "<group>"; };
 		F2EFA443F004371F3C415E15 /* Pods-FukuUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FukuUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FukuUITests/Pods-FukuUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -145,6 +147,7 @@
 				ECCDE347213217B70031A97A /* myViewController.swift */,
 				55B66DE32130F4B600054735 /* Info.plist */,
 				55B66E0521310B8E00054735 /* SQLiteDB.swift */,
+				ECCDE34B213251FC0031A97A /* my_ViewController.swift */,
 			);
 			path = Fuku;
 			sourceTree = "<group>";
@@ -400,6 +403,7 @@
 				55B66E0621310B8E00054735 /* SQLiteDB.swift in Sources */,
 				55B66DDA2130F4B400054735 /* ViewController.swift in Sources */,
 				55B66DD82130F4B400054735 /* AppDelegate.swift in Sources */,
+				ECCDE34C213251FC0031A97A /* my_ViewController.swift in Sources */,
 				55B66E1221323B9F00054735 /* WardrobeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
