@@ -14,7 +14,7 @@ class FormControllerViewController: FormViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         form +++ Section("Section1")
-            <<< TextRow(){ row in
+            <<< TextRow("Name"){ row in
                 row.title = "Item Name"
                 row.placeholder = "Enter text here"
         }
@@ -27,7 +27,9 @@ class FormControllerViewController: FormViewController {
         <<< PickerRow<String>("Type") {
             $0.title = "ActionSheetRow"
           //  $0.selectorTitle = "What would you like to add?"
-            $0.options = ["Tshirt", "Dress Shirt", "Blazer", "Jacket", "Dress", "Polo Tshirt", "Jeans", "Trousers", "Shorts", "Skirt", "Sandal", "Slipper", "Sneakers", "Dress shoes"]
+            
+            $0.options = SQLiteDB.instance.getTypes()
+            //$0.options = ["Tshirt", "Dress Shirt", "Blazer", "Jacket", "Dress", "Polo Tshirt", "Jeans", "Trousers", "Shorts", "Skirt", "Sandal", "Slipper", "Sneakers", "Dress shoes"]
             $0.value = "Tshirt"    // initially selected
            //print(form.values())
             
@@ -50,9 +52,22 @@ class FormControllerViewController: FormViewController {
             $0.title = "Confirm"
         }
             .onCellSelection { cell, row in
-                print (self.form.values())
+                let values = self.form.values()
+                print (values)
+               
+                guard let name = values["Name"], let colour = values["Colour"], let type = values["Type"] else {
+                        print("error, we are returning")
+                        return
+                    
+                }
                 
-        self.performSegue(withIdentifier: "pathToHome", sender: self)
+                
+                print("adding clothes")
+                SQLiteDB.instance.addClothing(name: name as! String, colour: colour as! String, types: [type as! String])
+                
+                print("trying to segue")
+                
+                self.performSegue(withIdentifier: "pathToHome", sender: self)
         }
         
         

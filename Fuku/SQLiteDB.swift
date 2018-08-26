@@ -119,15 +119,18 @@ class SQLiteDB {
         return clothingResult
     }
     
-    func addClothing(name: String, colour: String, typeIds: [Int64]) {
+    func addClothing(name: String, colour: String, types: [String]) {
         
         do {
             let insertClothing = clothingTable.insert(clothingName <- name, clothingColour <- colour)
             let clothingId = try db!.run(insertClothing)
-            for typeId in typeIds {
+            for type in types {
+                
+                let typeId = getTypeIdByName(name: type)
+                
                 let insertClothing_Type = clothing_typeTable.insert(
                     CT_clothingId <- clothingId,
-                    CT_typeId <- typeId
+                    CT_typeId <- typeId!
                 )
                 try db!.run(insertClothing_Type)
     
